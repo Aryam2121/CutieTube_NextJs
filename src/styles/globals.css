@@ -26,12 +26,12 @@
     --input: oklch(0.269 0 0);
     --ring: oklch(0.439 0 0);
   }
-  
+
   .dark {
     --background: oklch(0.145 0 0); /* Same as Light Mode */
     --foreground: oklch(0.985 0 0);
   }
-  
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

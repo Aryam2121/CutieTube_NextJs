@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["assets.aceternity.com"], // Add your external image host here
+    domains: ["assets.aceternity.com", "images.unsplash.com"], // Add Unsplash domain here
   },
 };
 
