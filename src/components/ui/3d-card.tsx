@@ -103,7 +103,7 @@ export const CardItem = ({
   rotateX?: number | string;
   rotateY?: number | string;
   rotateZ?: number | string;
-  [key: string]: any;  // Use a more specific type here, if needed
+  [key: string]: unknown;  // Replacing `any` with `unknown`
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
@@ -131,6 +131,7 @@ export const CardItem = ({
     </Tag>
   );
 };
+
 
 // Create a hook to use the context
 export const useMouseEnter = () => {
