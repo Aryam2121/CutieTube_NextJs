@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs"; 
 
 const prisma = new PrismaClient();
 
@@ -24,14 +24,15 @@ export default NextAuth({
           where: { email: credentials.email },
         });
 
-        if (!user) {
-          throw new Error("User not found");
+        if (!user || !user.password) {
+          throw new Error("Invalid email or password");
         }
 
-        // Compare the hashed password stored in the database
-        const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
+        // Ensure `user.password` is a string before using bcrypt.compare
+        const isPasswordValid = await bcrypt.compare(credentials.password, String(user.password));
+
         if (!isPasswordValid) {
-          throw new Error("Invalid password");
+          throw new Error("Invalid email or password");
         }
 
         return user;
