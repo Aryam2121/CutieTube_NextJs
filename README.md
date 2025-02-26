@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📽️ CutieTube  
 
-## Getting Started
+### CutieTube is a video streaming platform built with **Next.js, Prisma, and PostgreSQL**. It provides a seamless experience for users to **upload, watch, and interact** with videos. 🚀
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features ✨
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🎥 **Video Upload & Streaming**
+- 🔍 **Search & Discover Videos**
+- ❤️ **Like, Comment & Subscribe**
+- 🌙 **Dark Mode Support**
+- 🚀 **Optimized Performance with Next.js**
+- 📊 **Database Management with Prisma & PostgreSQL**
+  
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📌 About the Project  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+CutieTube is a modern **video streaming platform** that allows users to **upload, watch, and engage** with videos. Built with **Next.js** for a seamless experience, **Prisma & PostgreSQL** for scalable data handling, and **TailwindCSS** for a sleek UI.  
 
-## Learn More
+This project is perfect for:  
+✅ **Content Creators** – Upload and share videos easily.  
+✅ **Developers** – Learn modern web technologies by exploring this project.  
+✅ **Streaming Enthusiasts** – Watch and interact with high-quality videos.  
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Features  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🎬 **Video Upload & Streaming** – High-quality video playback.  
+🔐 **User Authentication** – Secure login with JWT & OAuth.  
+🌙 **Dark Mode** – Beautiful UI for night-time viewing.  
+💬 **Comments & Likes** – Engage with content creators.  
+📺 **Playlists & Subscriptions** – Personalized content feeds.  
+⚡ **Optimized Performance** – Built with Next.js for speed & efficiency.  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠 Tech Stack  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Frontend:** ![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwindcss&logoColor=white)  
+**Backend:** ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white) ![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white)  
+**Database:** ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)  
+**Authentication:** ![JWT](https://img.shields.io/badge/JWT-black?logo=jsonwebtokens&logoColor=white)  
+
+---
+
+## 🎉 Getting Started  
+
+1️⃣ **Clone the Repository**  
+```sh
+git clone https://github.com/Aryam2121/cutietube.git
+cd cutietube
