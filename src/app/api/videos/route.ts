@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
@@ -10,7 +10,7 @@ export async function GET() {
   return NextResponse.json(videos);
 }
 
-export async function POST(req) {
+export async function POST(req: NextRequest) {
   const { title, description, videoUrl, thumbnail, userId } = await req.json();
 
   const video = await prisma.video.create({
@@ -20,8 +20,9 @@ export async function POST(req) {
   return NextResponse.json(video);
 }
 
-export async function DELETE(req) {
+export async function DELETE(req: NextRequest) {
   const { id } = await req.json();
+  
   await prisma.video.delete({ where: { id } });
 
   return NextResponse.json({ message: "Video deleted" });
