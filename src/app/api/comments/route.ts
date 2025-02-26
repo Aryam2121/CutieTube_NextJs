@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client/extension"; // Ensure correct import for Prisma
+import { PrismaClient } from "@prisma/client/extension"; 
 import { NextResponse } from "next/server";
 
 interface PostRequestBody {
