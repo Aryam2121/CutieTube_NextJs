@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  CREATOR
+  ADMIN
+}
+
+model User {
+  id            String         @id @default(uuid())
+  name          String
+  email         String         @unique
+  password      String?
+  image         String?
+  role          Role           @default(USER)
+  videos        Video[]
+  comments      Comment[]
+  likes         Like[]
+  history       History[]
+  subscriptions Subscription[] @relation("subscriber")
+  subscribers   Subscription[] @relation("subscribedTo")
+  
+  createdAt     DateTime       @default(now())
+  deletedAt     DateTime?      // Soft delete support
+}
+
+model Video {
+  id          String    @id @default(uuid())
+  title       String
+  description String
+  videoUrl    String
+  thumbnail   String
+  views       Int       @default(0)
+  likes       Like[]
+  comments    Comment[]
+  history     History[]
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt   DateTime  @default(now())
+  deletedAt   DateTime? // Soft delete support
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  content   String
+  userId    String
+  videoId   String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  video     Video    @relation(fields: [videoId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  deletedAt DateTime? // Soft delete support
+}
+
+model Like {
+  id      String @id @default(uuid())
+  userId  String
+  videoId String
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  video   Video  @relation(fields: [videoId], references: [id], onDelete: Cascade)
+}
+
+model Subscription {
+  id        String @id @default(uuid())
+  userId    String
+  channelId String
+
+  user    User @relation(fields: [userId], references: [id], name: "subscriber", onDelete: Cascade)
+  channel User @relation(fields: [channelId], references: [id], name: "subscribedTo", onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model History {
+  id      String @id @default(uuid())
+  userId  String
+  videoId String
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  video Video @relation(fields: [videoId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
