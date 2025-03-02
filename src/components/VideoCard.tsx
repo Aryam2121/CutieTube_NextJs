@@ -1,31 +1,24 @@
-import Image from "next/image";
-import Link from "next/link";
-
-// Define the expected structure of the `video` object
-interface Video {
-  id: string;
-  thumbnail: string;
-  title: string;
-}
+import { GlowingEffect } from "./ui/glowing-effect";
+import Image from 'next/image';
 
 interface VideoCardProps {
-  video: Video;
+  title: string;
+  thumbnail: string;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
+const VideoCard: React.FC<VideoCardProps> = ({ title, thumbnail }) => {
   return (
-    <Link href={`/video/${video.id}`}>
-      <div className="bg-gray-900 p-4 rounded-lg shadow-lg hover:scale-105 transition">
-        <Image 
-          src={video.thumbnail} 
-          alt={video.title} 
-          width={300} 
-          height={200} 
-          className="rounded-lg" 
-        />
-        <h3 className="text-white text-lg font-semibold mt-2">{video.title}</h3>
-      </div>
-    </Link>
+    <div className="relative group p-2">
+      <GlowingEffect glow={true} proximity={50} spread={30} disabled={false} />
+      <Image
+        src={thumbnail}
+        alt={title}
+        width={500}
+        height={208}
+        className="w-full h-52 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+      />
+      <h3 className="mt-2 text-white text-sm font-semibold">{title}</h3>
+    </div>
   );
 };
 

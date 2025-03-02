@@ -2,7 +2,7 @@ import { NavbarDemo } from "@/components/Navbar";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { ThreeDCardDemo } from "@/components/ThreedCard";
 import { SidebarProvider } from "@/components/ui/SideBar";
-
+import VideoCard from "@/components/VideoCard";
 export default function Home() {
   return (
     <SidebarProvider>
@@ -15,6 +15,7 @@ export default function Home() {
         <SidebarLink link={{ href: "/videos", label: "Videos", icon: <span>🎥</span> }} /> */}
 
         <NavbarDemo />
+        <VideoCard title="Video Title" thumbnail="/Video1.jpg" />
         <ThreeDCardDemo />
         <Spotlight />
       </div>
