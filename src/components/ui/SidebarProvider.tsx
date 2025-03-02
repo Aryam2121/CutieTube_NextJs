@@ -2,7 +2,12 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
 // Sidebar Context
-const SidebarContext = createContext<any | undefined>(undefined);
+interface SidebarContextType {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
 
 // Sidebar Provider
 export function SidebarProvider({ children }: { children: ReactNode }) {

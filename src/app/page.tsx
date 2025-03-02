@@ -1,7 +1,7 @@
 import { NavbarDemo } from "@/components/Navbar";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { ThreeDCardDemo } from "@/components/ThreedCard";
-import { SidebarProvider, SidebarLink } from "@/components/ui/SideBar";
+import { SidebarProvider } from "@/components/ui/SideBar";
 
 export default function Home() {
   return (
